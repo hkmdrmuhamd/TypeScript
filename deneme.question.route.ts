@@ -7,7 +7,6 @@ router.get(
   '/capi/deneme/get-question/:questionId',
   requireCustomerAuthenticationMiddleware,
   async (req: Request, res: Response) => {
-    console.log('1');
     const { questionId } = req.params;
     const result = await DenemeService.getQuestion(parseInt(questionId));
     res.status(200).send(result);
